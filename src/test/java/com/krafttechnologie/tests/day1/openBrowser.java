@@ -1,4 +1,4 @@
-package com.krafttechnologie.tests.Day1;
+package com.krafttechnologie.tests.day1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +8,9 @@ public class openBrowser {
     public static void main(String[] args) {
         WebDriverManager.chromedriver().setup();// webdriver kütüphanesinden chromu hazır hale getirdik
         WebDriver driver=new ChromeDriver(); //Webdriver classından driverı hazır hale getirdik. Polymorphism
+
+      //  WebDriverManager.edgedriver().setup(); //edge den firefoxdan safariden de açabilirim
+       // WebDriver driver=new EdgeDriver();
         driver.get("https://www.krafttechnologie.com/");
         driver.manage().window().maximize();
         System.out.println("driver.getTitle() = " + driver.getTitle());

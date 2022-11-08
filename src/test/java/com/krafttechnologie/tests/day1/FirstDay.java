@@ -1,4 +1,4 @@
-package com.krafttechnologie.tests.Day1;
+package com.krafttechnologie.tests.day1;
 
 public class FirstDay {
     public static void main(String[] args) {
