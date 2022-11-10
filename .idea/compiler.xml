@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Batch2_TestNG_SeleniumBen" />
+        <module name="Batch2_TestNG_Selenium" />
       </profile>
     </annotationProcessing>
   </component>
