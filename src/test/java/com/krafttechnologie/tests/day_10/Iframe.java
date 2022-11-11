@@ -52,7 +52,5 @@ public class Iframe {
         driver.switchTo().frame(iframe);
         textArea.clear();
         textArea.sendKeys("This is third way");
-
-
     }
 }
