@@ -1,4 +1,4 @@
-package com.krafttechnologie.tests.day3;
+package com.krafttechnologie.tests.day_3;
 
 import com.github.javafaker.Faker;
 import com.krafttechnologie.utilities.WebDriverFactory;

@@ -19,7 +19,7 @@ public class TestBase {
     public void setUP() {
 
         driver = Driver.get();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+      //  driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         wait=new WebDriverWait(Driver.get(),15);
         //driver.manage().window().maximize();
         actions=new Actions(driver);
@@ -28,7 +28,8 @@ public class TestBase {
 
     @AfterMethod
     public void tearDown() {
-        driver.quit();
+
+       driver.close();
     }
 
 

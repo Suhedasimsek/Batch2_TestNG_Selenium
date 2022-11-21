@@ -1,4 +1,4 @@
-package com.krafttechnologie.tests.day_11;
+package com.krafttechnologie.tests.day_11.waits;
 
 import com.krafttechnologie.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
