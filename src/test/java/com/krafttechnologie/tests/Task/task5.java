@@ -1,4 +1,4 @@
-package com.krafttechnologie.tests.Tasks;
+package com.krafttechnologie.tests.Task;
 
 import com.krafttechnologie.utilities.WebDriverFactory;
 import org.openqa.selenium.By;

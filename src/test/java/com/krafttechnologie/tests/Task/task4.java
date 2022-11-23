@@ -1,4 +1,4 @@
-package com.krafttechnologie.tests.Tasks;
+package com.krafttechnologie.tests.Task;
 
 public class task4 {
     public static void main(String[] args) {

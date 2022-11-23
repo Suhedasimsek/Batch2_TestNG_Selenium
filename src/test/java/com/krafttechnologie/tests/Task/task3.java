@@ -1,4 +1,4 @@
-package com.krafttechnologie.tests.Tasks;
+package com.krafttechnologie.tests.Task;
 
 public class task3 {
 //    Locator HM

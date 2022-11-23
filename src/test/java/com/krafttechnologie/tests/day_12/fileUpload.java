@@ -36,21 +36,39 @@ public class fileUpload {
 
         driver.get("https://demoqa.com/upload-download");
 
-        WebElement chooseFile= driver.findElement(By.id("uploadFile"));
+        WebElement chooseFile = driver.findElement(By.id("uploadFile"));
         Thread.sleep(2000);
 
         chooseFile.sendKeys("C:\\Users\\Win10\\OneDrive\\Masaüstü\\deneme text.txt");
 
-        WebElement testmsj= driver.findElement(By.cssSelector("#uploadedFilePath"));
+        WebElement testmsj = driver.findElement(By.cssSelector("#uploadedFilePath"));
 
         System.out.println("testmsj = " + testmsj.getText());
 
-        String actual= testmsj.getText();
-        String expected="deneme text.txt";
+        String actual = testmsj.getText();
+        String expected = "deneme text.txt";
 
         Assert.assertTrue(actual.contains(expected));
 
     }
 
+    @Test
+    public void uploadFile2() {
+        String projectPath = System.getProperty("user.dir");
+        String filePath = "src/test/resources/deneme text.txt";
+        String fullPath = projectPath + "/" + filePath;
+        driver.get("https://demoqa.com/upload-download");
+
+        WebElement chooseFile = driver.findElement(By.id("uploadFile"));
+        chooseFile.sendKeys(fullPath);
+        WebElement testmsj = driver.findElement(By.cssSelector("#uploadedFilePath"));
+
+        System.out.println("testmsj = " + testmsj.getText());
+
+        String actual = testmsj.getText();
+        String expected = "deneme text.txt";
+
+        Assert.assertTrue(actual.contains(expected));
+    }
 }
 

@@ -9,10 +9,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class POMNegativeTest extends TestBase {
-
+    LoginPages loginPages = new LoginPages();
     @Test
     public void wrongPassword2() {
-        LoginPages loginPages = new LoginPages();
+
         driver.get(ConfigurationReader.get("url"));
 
         loginPages.userNameInput_loc.sendKeys(ConfigurationReader.get("username"));
@@ -22,9 +22,8 @@ public class POMNegativeTest extends TestBase {
     }
     @Test
     public void wrongUsername() {
-        LoginPages loginPages = new LoginPages();
-        driver.get(ConfigurationReader.get("url"));
 
+        driver.get(ConfigurationReader.get("url"));
         loginPages.userNameInput_loc.sendKeys("wrongusername");
         loginPages.passwordInput_loc.sendKeys(ConfigurationReader.get("password"));//Keys.ENTER
         loginPages.submitButton_loc.click();
