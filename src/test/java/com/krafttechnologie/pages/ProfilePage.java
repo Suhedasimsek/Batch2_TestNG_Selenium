@@ -40,9 +40,9 @@ public class ProfilePage extends BasePage {
     @FindBy(xpath = "//button[.='Save Changes']")
     public WebElement save;
 
-
-    @FindBy(xpath = "//div[@class='alert alert-success bg-success text-light border-0 alert-dismissible fade show']")
+    @FindBy (xpath = "//div[@class='alert alert-success bg-success text-light border-0 alert-dismissible fade show']")
     public WebElement profileUpdate;
+
     @FindBy(xpath = "//input[@placeholder='Job Title *']")
     public WebElement jobTitle;
 
@@ -64,14 +64,17 @@ public class ProfilePage extends BasePage {
     @FindBy(xpath = "//button[@value='experience']")
     public WebElement addExperienceBtn;
 
+    @FindBy(xpath = "//input[@id='email']")
+    public WebElement profilEmail_loc;
 
-    public void profileTabs(String tabName) {
-            String tabLocator = "//button[.='" + tabName + "']";
 
-            BrowserUtils.waitForClickablility(By.xpath(tabLocator), 5);
-            WebElement tabElement = Driver.get().findElement(By.xpath(tabLocator));
-            tabElement.click();
-        }
+    public void profileTabs(String tabName){
+        driver=Driver.get();
+        String tabLocator= "//button[.='"+tabName+"']";
+
+        BrowserUtils.waitForClickablility(By.xpath(tabLocator),5);
+        WebElement tabElement= driver.findElement(By.xpath(tabLocator));
+        tabElement.click();
     }
 
-
+}

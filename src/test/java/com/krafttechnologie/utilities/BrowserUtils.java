@@ -41,7 +41,7 @@ public class BrowserUtils {
      * Switches to new window by the exact title. Returns to original window if target title not found
      * @param targetTitle
      */
-    public static void switchToWindow(String targetTitle,WebDriver driver) {
+    public static void switchToWindow(String targetTitle, WebDriver driver) {
         String origin = Driver.get().getWindowHandle();
         for (String handle : Driver.get().getWindowHandles()) {
             Driver.get().switchTo().window(handle);
@@ -62,52 +62,45 @@ public class BrowserUtils {
         actions.moveToElement(element).perform();
     }
 
+    public  static void dragAndDropBy(WebElement element,int x,int y){
+
+        Actions actions=new Actions(Driver.get());
+        actions.dragAndDropBy(element,x,y).perform();
+    }
+
     /**
      * return a list of string from a list of elements
      *
      * @param list of webelements
      * @return list of string
      */
-    public static List<String> getElementsText(List<WebElement> list) {
-//        List<String> elemTexts = new ArrayList<String>();
-        List<String> elemTexts = new ArrayList<>();
+//    public static List<String> getElementsText(List<WebElement> list) {
+////        List<String> elemTexts = new ArrayList<String>();
+//        List<String> elemTexts = new ArrayList<>();
+//
+//
+//        for (WebElement el : list) {
+//            elemTexts.add(el.getText());
+//        }
+//        return elemTexts;
+//    }
 
-
-        for (WebElement el : list) {
-            elemTexts.add(el.getText());
-        }
-        return elemTexts;
-    }
-    public static void dragAndDrop(WebElement element1, WebElement element2){
-        Actions actions=new Actions(Driver.get());
-        actions.dragAndDrop(element1,element2).perform();
-    }
-    public static void dragAndDropBy(WebElement element){
-        Actions actions=new Actions(Driver.get());
-        actions.dragAndDropBy(element, -150,0).perform();
-    }
-    public static void upLoadFile(WebElement element){
-        String projetPath=System.getProperty("user.dir");
-        String filePath="src/test/resources/deneme text.txt";
-        String fullPath=projetPath+"/"+filePath;
-        element.sendKeys(fullPath);
-    }
     /**
      * Extracts text from list of elements matching the provided locator into new List<String>
      *
      * @param locator
      * @return list of strings
      */
-    public static List<String> getElementsText(By locator) {
-
-        List<WebElement> elems = Driver.get().findElements(locator);
-        List<String> elemTexts = new ArrayList<>();
-
-        for (WebElement el : elems) {
-            elemTexts.add(el.getText());
-        }
-        return elemTexts;
-    }
+//    public static List<String> getElementsText(By locator) {
+//
+//        List<WebElement> elems = Driver.get().findElements(locator);
+//        List<String> elemTexts = new ArrayList<>();
+//
+//        for (WebElement el : elems) {
+//            elemTexts.add(el.getText());
+//        }
+//        return elemTexts;
+//    }
 
     /**
      * Performs a pause
@@ -198,7 +191,7 @@ public class BrowserUtils {
     public static void verifyElementDisplayed(By by) {
         try {
             Assert.assertTrue(Driver.get().findElement(by).isDisplayed(), "Element not visible: " + by);
-        } catch (NoSuchElementException e) {
+        } catch (java.util.NoSuchElementException e) {
             e.printStackTrace();
             Assert.fail("Element not found: " + by);
 
@@ -214,7 +207,7 @@ public class BrowserUtils {
     public static void verifyElementNotDisplayed(By by) {
         try {
             Assert.assertFalse(Driver.get().findElement(by).isDisplayed(), "Element should not be visible: " + by);
-        } catch (NoSuchElementException e) {
+        } catch (java.util.NoSuchElementException e) {
             e.printStackTrace();
 
         }

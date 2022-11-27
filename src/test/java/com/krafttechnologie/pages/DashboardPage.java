@@ -37,6 +37,8 @@ public class DashboardPage extends BasePage{
     @FindBy(xpath = "//span[.='Modal']")
     public WebElement moduleLocator;
 
+
+
     public String DashboardPageTitle(String title){
 
         String Title=dashboardPageTitle.getText();

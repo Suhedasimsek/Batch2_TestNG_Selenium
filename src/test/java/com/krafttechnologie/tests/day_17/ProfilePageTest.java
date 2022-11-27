@@ -42,7 +42,7 @@ public class ProfilePageTest extends TestBase {
         profilePage.skills.clear();
         profilePage.company.sendKeys("TestNG,Cucumber");
         BrowserUtils.waitForPresenceOfElement(By.cssSelector("#terms"),5);
-        BrowserUtils.dragAndDropBy(profilePage.slider);
+       // BrowserUtils.dragAndDropBy(profilePage.slider);
         //profilePage.save.click(); hata veriyor jscript metoduyla yapalım
         BrowserUtils.clickWithJS(profilePage.save);
     }

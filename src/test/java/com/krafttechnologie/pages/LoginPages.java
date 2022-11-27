@@ -7,29 +7,29 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPages extends BasePage {
-    public  LoginPages(){
 
-        PageFactory.initElements(Driver.get(),this);
+    @FindBy(name = "email")
+    public WebElement userEmailInput_loc;
 
-    }
-    @FindBy(name="email")
-    public WebElement userNameInput_loc;
-
-    @FindBy(name="password")
+    @FindBy(name = "password")
     public WebElement passwordInput_loc;
 
-    @FindBy(xpath = "//button[@class='btn btn-primary w-100']")
+    @FindBy(xpath = "//button[@type='submit']")
     public WebElement submitButton_loc;
 
-    @FindBy(xpath="//*[contains(text(),'Email address or password is incorrect. Please check')]")
+    @FindBy(xpath = "//*[contains(text(),'Email address or password is incorrect')]")
     public WebElement warningMessage_loc;
 
+
     public void loginUser(){
-        String username= ConfigurationReader.get("username");
+
+        String username= ConfigurationReader.get("userEmail");
         String password=ConfigurationReader.get("password");
 
-        userNameInput_loc.sendKeys(username);
+        userEmailInput_loc.sendKeys(username);
         passwordInput_loc.sendKeys(password);
         submitButton_loc.click();
     }
-    }
+
+
+}

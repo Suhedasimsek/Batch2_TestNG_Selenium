@@ -6,13 +6,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverFactory {
-    //statik method yaz adı getDriver
-    //String parametresi alsın name=browserType
-    //method browser setup edecek
-    //chromedriver return edecek
-    
-    public static WebDriver getDriver(String browserType){
-        WebDriver driver=null;
+    //Task
+    //write a static method that takes a string parameter name : browserType
+    //it will setup the browser
+    // and the method will return chromedriver or firefoxdriver object
+    //name of the method : getDriver
+
+
+    public static WebDriver getDriver(String browserType) {
+        WebDriver driver = null;
+
         switch (browserType.toLowerCase()) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
@@ -23,7 +26,9 @@ public class WebDriverFactory {
                 driver = new FirefoxDriver();
                 break;
         }
-                    return driver;
-                }
-            }
 
+        return driver;
+
+
+    }
+}
