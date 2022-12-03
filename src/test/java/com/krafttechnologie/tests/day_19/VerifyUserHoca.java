@@ -28,7 +28,7 @@ public class VerifyUserHoca extends TestBase {
             Assert.assertEquals(actualAccountName,expectedAccountName);
 
             extentLogger.info("Click on My profile");
-            //loginPages.navigateToModule("My Profile","");
+           // loginPages.navigateToModule("My Profile","");
             dashboardPage.myProfile.click();
 
             String profileTab="Edit Profile";

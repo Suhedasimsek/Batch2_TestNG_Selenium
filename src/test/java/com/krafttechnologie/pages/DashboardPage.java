@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class DashboardPage extends BasePage{
+public class DashboardPage extends BasePage {
     @FindBy(xpath = "//h1[.='Dashboard']")
     public WebElement dashboardPageTitle;
 
@@ -37,24 +37,32 @@ public class DashboardPage extends BasePage{
     @FindBy(xpath = "//span[.='Modal']")
     public WebElement moduleLocator;
 
+    @FindBy(xpath = "//a[@class='nav-link nav-profile d-flex align-items-center pe-0']")
+    public WebElement getUserName;
 
+    public String DashboardPageTitle(String title) {
 
-    public String DashboardPageTitle(String title){
-
-        String Title=dashboardPageTitle.getText();
+        String Title = dashboardPageTitle.getText();
         return Title;
     }
 
 
-    public String UsersNames(String name){
-        String usernameLocator="//h3[.='"+name+"']";
+    public String UsersNames(String name) {
+        String usernameLocator = "//h3[.='" + name + "']";
 
-        BrowserUtils.waitForPresenceOfElement(By.xpath(usernameLocator),5);
+        BrowserUtils.waitForPresenceOfElement(By.xpath(usernameLocator), 5);
 
-        WebElement UserName= Driver.get().findElement(By.xpath(usernameLocator));
+        WebElement UserName = Driver.get().findElement(By.xpath(usernameLocator));
 
-        String actualName= UserName.getText();
+        String actualName = UserName.getText();
 
         return actualName;
+    }
+
+    public String getUserName() {
+
+        BrowserUtils.waitForVisibility(getUserName, 5);
+
+        return getUserName.getText();
     }
 }

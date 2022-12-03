@@ -21,6 +21,7 @@ public abstract class BasePage {
 
         String moduleLocator="//span[.='"+module+"']";
 
+
         driver=Driver.get();
 
         BrowserUtils.waitForClickablility(By.xpath(tabLocator),5);
@@ -29,8 +30,6 @@ public abstract class BasePage {
 
         BrowserUtils.waitForClickablility(By.xpath(moduleLocator),5);
         driver.findElement(By.xpath(moduleLocator)).click();
-
-
     }
 
 
