@@ -36,7 +36,8 @@ public class Task3 {
     public void Test() throws InterruptedException {
         driver.get("http://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html");
 
-        List<WebElement> Elements = driver.findElements(By.xpath("//input[@type='radio'][@name='color']"));
+       // List<WebElement> Elements = driver.findElements(By.xpath("//h2"));
+       List<WebElement> Elements = driver.findElements(By.xpath("//input[@type='radio'][@name='color']"));
         System.out.println("Elements.size() = " + Elements.size());
         //Elements.get(1).click();
         for (WebElement Element:Elements) {
